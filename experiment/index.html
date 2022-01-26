@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Pressure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Blood Pressure Tracker</h1>
+    <div id="app">
+        <h3>Blood Pressure</h3>
+        <label for="date">Date:</label>
+        <input type="text" id="date" v-model="enteredDate">
+        <label for="time">Time:</label>
+        <input type="text" id="time" v-model="enteredTime">
+        <label for="systolic">Systolic:</label>
+        <input type="text" id="systolic" v-model="enteredSyst">
+        <label for="diastolic">Diastolic:</label>
+        <input type="text" id="diastolic" v-model="enteredDias">
+        <div class="pill-taken">
+            <label>Pill Taken?</label>
+            <input class="yes-no" type="radio"
+                   name="affirmative"
+                   value="yes"
+                   checked>
+            Yes
+            </input>
+            <input class="yes-no" type="radio"
+                   name="negative"
+                   value="no">
+            No
+            </input>
+        </div>
+        <label for="pill-time">Time of pill:</label>
+        <input type="text" id="pill-time">
+        <button v-on:click="addStats">Enter Data</button>
+    </div>
+    <ul>
+        <li v-for="stat in stats">{{ stat }}</li>
+    </ul>
+
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+</body>
+</html>
